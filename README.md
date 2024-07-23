@@ -54,7 +54,3 @@ This file contains the Flask application code that handles the web interface and
 ### rule_engine.py
 
 This file contains the backend logic for creating, combining, and evaluating rules, as well as interacting with the SQLite database.
-
-## License
-
-This project is licensed under the MIT License.
