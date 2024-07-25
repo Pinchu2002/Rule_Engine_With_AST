@@ -1,7 +1,8 @@
-
 # Rule Engine Evaluation
 
-This project is a simple web application that evaluates rules based on user input. The rules are defined in the `rule_engine.py` file, and the web interface is provided by a Flask application.
+## Overview
+
+This project is a Flask-based web application designed to evaluate rules based on user input. The rules are stored in a SQLite database, and the evaluation results are saved for future reference. The application provides a user-friendly interface for inputting data and displays the evaluation results based on predefined rules.
 
 ## Project Structure
 ```bash
@@ -19,42 +20,70 @@ Ensure you have Python 3.7 or higher installed on your system.
 
 ## Installation
 
-1. Clone the repository or download the source code.
+### Clone the Repository
 
-2. Create a virtual environment and activate it:
+First, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/rule-engine-evaluation.git
+cd rule-engine-evaluation
+```
+## Create a Virtual Environment
+
+Create a virtual environment to manage dependencies:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
+## Install Dependencies
+
+Install the necessary dependencies using pip:
+```bash
+pip install -r requirements.txt
+```
+
+## Initialize the Database
+
+Initialize the SQLite database by running the Flask application:
+```bash
+python app.py
+```
+This will create the SQLite database and necessary tables.
+
+## Usage
+
+To use the application:
+
+    1. Run the Application
 
     ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+        python app.py
     ```
 
-3. Install the required packages:
-
-    ```bash
-    pip install flask
-    ```
-
-## Running the Application
-
-1. Initialize the database:
-    python -c "from rule_engine import init_db; init_db()"
-
-2. Run the Flask application:
-    python app.py
+    2. Open your browser and navigate to http://127.0.0.1:5000/
 
 
-3. Open your web browser and navigate to `http://127.0.0.1:5000` to access the application.
+    3. Fill in the form with the required information and click "Evaluate" to see the result.
 
-## Project Files
 
-### index.html
-
-This file contains the HTML form for user input and displays the evaluation result.
-
+## Files Description
 ### app.py
 
-This file contains the Flask application code that handles the web interface and interacts with the rule engine.
+This is the main Flask application file. It defines the routes, handles form submissions, and integrates the rule engine.
+- index: Renders the main page with the form.
+- evaluate: Handles form submissions, evaluates the rules based on input, and displays the result.
 
 ### rule_engine.py
 
-This file contains the backend logic for creating, combining, and evaluating rules, as well as interacting with the SQLite database.
+This file contains the logic for the rule engine, including functions to create, combine, evaluate rules, and interact with the SQLite database.
+- init_db: Initializes the SQLite database and creates the necessary tables.
+- save_rule: Saves a rule to the database.
+- save_evaluation_result: Saves the evaluation result to the database.
+- create_rule: Converts a rule string into an AST node.
+- combine_rules: Combines multiple rules using logical operators.
+- evaluate_rule: Evaluates the combined rule against the provided data.
+
+### templates/index.html
+
+The HTML template for the web application. It includes the form for user input and displays the evaluation result.
