@@ -15,8 +15,8 @@ def evaluate():
     experience = int(request.form['experience'])
     data = {"age": age, "department": department, "salary": salary, "experience": experience}
 
-    rule1 = "((age > 30 and department == 'Sales') or (age < 25 and department == 'Marketing')) and (salary > 50000 or experience > 5)"
-    # rule1 = "((age > 30 and department == 'Marketing')) and (salary > 20000 or experience > 5)"
+    # rule1 = "((age > 30 and department == 'Sales') or (age < 25 and department == 'Marketing')) and (salary > 50000 or experience > 5)"
+    rule1 = "((age > 30 and department == 'Marketing')) and (salary > 20000 or experience > 5)"
     rule2 = "((age > 30 and department == 'Marketing')) and (salary > 20000 or experience > 5)"
     save_rule(rule1)
     save_rule(rule2)
