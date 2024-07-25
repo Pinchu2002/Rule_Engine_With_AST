@@ -4,11 +4,14 @@
 This project is a simple web application that evaluates rules based on user input. The rules are defined in the `rule_engine.py` file, and the web interface is provided by a Flask application.
 
 ## Project Structure
-
-- `index.html`: The front-end HTML file with a form to collect user input.
-- `app.py`: The main Flask application file.
-- `rule_engine.py`: The backend logic for rule evaluation and database interaction.
-
+```bash
+RULE_ENGINE_WITH_AST/
+├── app.py
+├── templates/
+│   └── index.html
+└── static/
+    └── styles.css
+```
 ## Prerequisites
 
 Ensure you have Python 3.7 or higher installed on your system.
