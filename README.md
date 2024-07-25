@@ -54,17 +54,12 @@ This will create the SQLite database and necessary tables.
 ## Usage
 
 To use the application:
-
-    1. Run the Application
-
-    ```bash
-        python app.py
-    ```
-
-    2. Open your browser and navigate to http://127.0.0.1:5000/
-
-
-    3. Fill in the form with the required information and click "Evaluate" to see the result.
+- Run the Application
+```bash
+   python app.py
+```
+- Open your browser and navigate to http://127.0.0.1:5000/
+- Fill in the form with the required information and click "Evaluate" to see the result.
 
 
 ## Files Description
